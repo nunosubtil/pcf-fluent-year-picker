@@ -16,8 +16,8 @@ export class PCFFluentYearPicker implements ComponentFramework.ReactControl<IInp
         state: ComponentFramework.Dictionary
     ): void {
         this.notifyOutputChanged = notifyOutputChanged;
-        this._isDarkMode = context.fluentDesignLanguage?.isDarkTheme ?? false;
-        this._value = context.parameters.yearInput.raw || ""; // Initialize _value
+        this._isDarkMode = context.fluentDesignLanguage?.isDarkTheme ?? false; // Check theme from the context
+        this._value = context.parameters.yearInput.raw || ""; 
     }
 
     public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
