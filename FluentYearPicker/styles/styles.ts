@@ -126,7 +126,7 @@ const styles = {
     width: '100%',
     height: '35px',
     fontSize: FontSizes.small,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#666666',
     border: 'none',
     borderRadius: '6px',
     transition: 'background-color 0.3s',
@@ -138,7 +138,7 @@ const styles = {
     backgroundColor: '#E7EFF7',
   },
   yearButtonHoverDark: {
-    backgroundColor: '#585a5f',
+    backgroundColor: '#777777',
   },
   yearButtonActive: {
     backgroundColor: '#1160B7',
