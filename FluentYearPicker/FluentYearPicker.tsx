@@ -17,9 +17,7 @@ interface FluentYearPickerProps {
 }
 
 const FluentYearPicker: React.FC<FluentYearPickerProps> = ({ year, updatedValue, isDarkMode }) => (
-  <div className="p-4">
-    <YearPicker initialYear={year ? parseInt(year, 10) : null} updatedValue={updatedValue} isDarkMode={isDarkMode} />
-  </div>
+  <YearPicker initialYear={year ? parseInt(year, 10) : null} updatedValue={updatedValue} isDarkMode={isDarkMode} />
 );
 
 const getYearsInDecade = (startYear: number, yearsInScreen: number): number[] =>
@@ -76,12 +74,10 @@ const YearPicker: React.FC<YearPickerProps> = ({ initialYear, updatedValue, isDa
       style={isDarkMode ? styles.navButtonDark : styles.navButton}
       onMouseOver={(e) => {
         const target = e.currentTarget as HTMLButtonElement;
-        target.style.color = '#333';
         target.style.transform = 'scale(1.1)';
       }}
       onMouseOut={(e) => {
         const target = e.currentTarget as HTMLButtonElement;
-        target.style.color = '#333';
         target.style.transform = 'scale(1)';
       }}
     >
@@ -106,20 +102,24 @@ const YearPicker: React.FC<YearPickerProps> = ({ initialYear, updatedValue, isDa
           ? isDarkMode 
             ? { ...styles.yearButton, ...styles.yearButtonActiveDark } 
             : { ...styles.yearButton, ...styles.yearButtonActive }
-          : styles.yearButton}
+          : { ...styles.yearButton, backgroundColor: isDarkMode ? '#555' : styles.yearButton.backgroundColor }}
         onMouseOver={(e) => {
-          if (selectedYear !== year) (e.currentTarget as HTMLButtonElement).style.backgroundColor = styles.yearButtonHover.backgroundColor;
+          if (selectedYear !== year) {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor = isDarkMode ? styles.yearButtonHoverDark.backgroundColor : styles.yearButtonHover.backgroundColor;
+          }
         }}
         onMouseOut={(e) => {
-          if (selectedYear !== year) (e.currentTarget as HTMLButtonElement).style.backgroundColor = styles.yearButton.backgroundColor;
+          if (selectedYear !== year) {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor = isDarkMode ? '#555' : styles.yearButton.backgroundColor;
+          }
         }}
       />
     </div>
   );
 
   return (
-    <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <div style={isDarkMode ? styles.cardDark : styles.card}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'transparent' }}>
+      <div style={{ ...styles.card, backgroundColor: 'transparent', boxShadow: 'none' }}>
         <div style={styles.header}>
           <Label style={isDarkMode ? styles.labelDark : styles.label}>{`${currentDecade} - ${currentDecade + yearsInScreen - 1}`}</Label>
           <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '5px' }}>
