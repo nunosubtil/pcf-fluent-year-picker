@@ -6,7 +6,7 @@ import { Label } from '@fluentui/react/lib/Label';
 import styles from './styles/styles';
 
 const small_screen_breakpoint_width = 600;
-const small_screen_breakpoint_height = 900;
+const small_screen_breakpoint_height = 950;
 const years_in_screen_large = 12;
 const years_in_screen_small = 6;
 
