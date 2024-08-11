@@ -3,7 +3,7 @@ import FluentYearPicker, { FluentYearPickerProps } from "./FluentYearPicker";
 import * as React from "react";
 
 export class PCFFluentYearPicker implements ComponentFramework.ReactControl<IInputs, IOutputs> {
-    private notifyOutputChanged!: () => void;
+    private notifyOutputChanged: () => void;
     private _value: string;
     private _isDarkMode: boolean;
     private _formFactor: number;
@@ -29,7 +29,6 @@ export class PCFFluentYearPicker implements ComponentFramework.ReactControl<IInp
     }
 
     public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
-        // Update values in case they change dynamically
         this._updateContextValues(context);
 
         const props: FluentYearPickerProps = { 
@@ -61,6 +60,6 @@ export class PCFFluentYearPicker implements ComponentFramework.ReactControl<IInp
     }
 
     public destroy(): void {
-        // Add code to cleanup control if necessary
+        // Cleanup if necessary
     }
 }
