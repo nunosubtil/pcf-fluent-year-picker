@@ -1,5 +1,21 @@
 import { keyframes, FontWeights, FontSizes } from '@fluentui/react/lib/Styling';
 
+const colors = {
+  white: '#ffffff',
+  black: '#292929',
+  darkGray: '#333',
+  lightGray: '#fefefe',
+  mediumGray: '#adadad',
+  lightBackground: '#f8f9fa',
+  darkBackground: '#666666',
+  lightHoverBackground: '#E7EFF7',
+  darkHoverBackground: '#777777',
+  activeBlue: '#1160B7',
+  activeDark: '#141414',
+  textDark: '#fefefe',
+  textMediumDark: '#adadad',
+};
+
 const scaleUp = keyframes({
   from: { transform: 'scale(1)' },
   to: { transform: 'scale(1.1)' },
@@ -50,13 +66,13 @@ const styles = {
   label: {
     fontWeight: FontWeights.semibold,
     fontSize: FontSizes.medium,
-    color: '#333',
+    color: colors.darkGray,
     margin: '0 5px',
   },
   labelDark: {
     fontWeight: FontWeights.semibold,
     fontSize: FontSizes.medium,
-    color: '#fefefe',
+    color: colors.textDark,
     margin: '0 5px',
   },
   navButton: {
@@ -65,7 +81,7 @@ const styles = {
     padding: '0',
     borderRadius: '50%',
     backgroundColor: 'transparent',
-    color: '#333',
+    color: colors.darkGray,
     border: 'none',
     cursor: 'pointer',
     transition: 'background-color 0.3s, transform 0.3s',
@@ -79,7 +95,7 @@ const styles = {
     padding: '0',
     borderRadius: '50%',
     backgroundColor: 'transparent',
-    color: '#adadad',
+    color: colors.mediumGray,
     border: 'none',
     cursor: 'pointer',
     transition: 'background-color 0.3s, transform 0.3s',
@@ -88,7 +104,7 @@ const styles = {
     alignItems: 'center',
   },
   navButtonHover: {
-    backgroundColor: '#333',
+    backgroundColor: colors.darkGray,
     animation: `${scaleUp} 0.3s forwards`,
   },
   navButtonOut: {
@@ -115,7 +131,7 @@ const styles = {
     width: '100%',
     height: '35px',
     fontSize: FontSizes.small,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: colors.lightBackground,
     border: 'none',
     borderRadius: '6px',
     transition: 'background-color 0.3s',
@@ -126,27 +142,27 @@ const styles = {
     width: '100%',
     height: '35px',
     fontSize: FontSizes.small,
-    backgroundColor: '#666666',
+    backgroundColor: colors.darkBackground,
     border: 'none',
     borderRadius: '6px',
     transition: 'background-color 0.3s',
     cursor: 'pointer',
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-    color: '#1f1f1f',
+    color: colors.activeDark,
   },
   yearButtonHover: {
-    backgroundColor: '#E7EFF7',
+    backgroundColor: colors.lightHoverBackground,
   },
   yearButtonHoverDark: {
-    backgroundColor: '#777777',
+    backgroundColor: colors.darkHoverBackground,
   },
   yearButtonActive: {
-    backgroundColor: '#1160B7',
-    color: 'white',
+    backgroundColor: colors.activeBlue,
+    color: colors.white,
   },
   yearButtonActiveDark: {
-    backgroundColor: '#1f1f1f',
-    color: 'white',
+    backgroundColor: colors.activeDark,
+    color: colors.white,
   },
 };
 
