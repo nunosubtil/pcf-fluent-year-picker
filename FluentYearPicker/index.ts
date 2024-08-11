@@ -4,11 +4,17 @@ import * as React from "react";
 
 export class PCFFluentYearPicker implements ComponentFramework.ReactControl<IInputs, IOutputs> {
     private notifyOutputChanged!: () => void;
-    private _value!: string;
-    private _isDarkMode!: boolean;
-    private _formFactor!: number;
+    private _value: string;
+    private _isDarkMode: boolean;
+    private _formFactor: number;
+    private _isDisabled: boolean;
 
-    constructor() { }
+    constructor() { 
+        this._value = "";
+        this._isDarkMode = false;
+        this._formFactor = 0;
+        this._isDisabled = false;
+    }
 
     public init(
         context: ComponentFramework.Context<IInputs>,
@@ -16,8 +22,10 @@ export class PCFFluentYearPicker implements ComponentFramework.ReactControl<IInp
         state: ComponentFramework.Dictionary
     ): void {
         this.notifyOutputChanged = notifyOutputChanged;
-        this._value = context.parameters.yearInput.raw || "";
         this._updateContextValues(context);
+
+        const yearInput = context.parameters.yearInput;
+        this._value = yearInput.raw || "";
     }
 
     public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
@@ -25,19 +33,20 @@ export class PCFFluentYearPicker implements ComponentFramework.ReactControl<IInp
         this._updateContextValues(context);
 
         const props: FluentYearPickerProps = { 
-            year: context.parameters.yearInput.raw || this._value,
+            year: this._value,
             updatedValue: this._updateValue.bind(this),
             isDarkMode: this._isDarkMode,
-            formFactor: this._formFactor
+            formFactor: this._formFactor,
+            disabled: this._isDisabled
         };
-        return React.createElement(
-            FluentYearPicker, props
-        );
+
+        return React.createElement(FluentYearPicker, props);
     }
 
     private _updateContextValues(context: ComponentFramework.Context<IInputs>): void {
-        this._isDarkMode = context.fluentDesignLanguage?.isDarkTheme ?? false; // Handle theme dynamically
-        this._formFactor = context.client.getFormFactor(); // Handle form factor dynamically
+        this._isDarkMode = context.fluentDesignLanguage?.isDarkTheme ?? false;
+        this._formFactor = context.client.getFormFactor();
+        this._isDisabled = context.mode.isControlDisabled;
     }
     
     private _updateValue(value: string) {
