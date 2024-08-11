@@ -63,7 +63,7 @@ const YearPicker: React.FC<YearPickerProps> = ({ initialYear, updatedValue, isDa
   const gridStyles = formFactor <= 1 ? styles.gridContainer : styles.gridContainerSmall;
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'transparent', opacity: disabled ? 0.9 : 1, pointerEvents: disabled ? 'none' : 'auto' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'transparent', pointerEvents: disabled ? 'none' : 'auto' }}>
       <div style={{ ...styles.card, backgroundColor: 'transparent', boxShadow: 'none' }}>
         <div style={styles.header}>
           <Label style={isDarkMode ? styles.labelDark : styles.label}>
