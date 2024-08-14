@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Fluent Year Picker PCF (PowerApps Component Framework) component provides a modern, user-friendly interface for selecting a year. Built using React and Fluent UI, this component maintains the look and feel consistent with modern web applications and Microsoft products. The year picker is designed to fit seamlessly into a single-line text field, making it an elegant solution for year selection in your applications.
+The Fluent Year Picker PCF (PowerApps Component Framework) component provides a modern and interactive, user-friendly interface for selecting a year. Developed using TypeScript, React, and Fluent UI, this component maintains the look and feel consistent with modern web applications and Microsoft products. The year picker is designed to fit seamlessly into a single-line text field, making it an elegant solution for year selection in your applications.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0e67e79c-3b17-4b37-bbea-e5bed1312ded" alt="PCFFluentYearPicker_light_video" width="350" style="margin-right: 10px;"/>
@@ -12,9 +12,9 @@ The Fluent Year Picker PCF (PowerApps Component Framework) component provides a 
 ## Features
 
 - **Year Selection**: Easily select a year from the menu.
-- **Modern UI**: Leverages Fluent UI to provide a sleek and consistent user experience.
-- **Responsive**: Utilizes React for dynamic and responsive component behavior.
-- **Dark Mode**: Supports the upcoming model-driven apps native dark mode.
+- **Modern UI**: Utilizes Fluent UI to provide a sleek and consistent user experience.
+- **Responsive**: Leverages React to deliver dynamic, responsive behavior that adapts to the context's form factor.
+- **Dark Mode**: Supports the upcoming native dark mode in model-driven apps.
 - **Field Type**: Applied in a single-line text field (string), ideal for forms and compact layouts.
 
 ## Usage
