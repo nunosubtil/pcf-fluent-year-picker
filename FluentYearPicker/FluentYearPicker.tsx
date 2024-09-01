@@ -8,7 +8,7 @@ import styles from './styles/styles';
 const YEARS_LARGE_SCREEN = 12;
 const YEARS_SMALL_SCREEN = 6;
 
-interface FluentYearPickerProps {
+interface IFluentYearPickerProps {
   year?: string;
   updatedValue: (value: string) => void;
   isDarkMode: boolean;
@@ -16,14 +16,14 @@ interface FluentYearPickerProps {
   disabled: boolean; 
 }
 
-const FluentYearPicker: React.FC<FluentYearPickerProps> = ({ year, updatedValue, isDarkMode, formFactor, disabled }) => (
+const FluentYearPicker: React.FC<IFluentYearPickerProps> = ({ year, updatedValue, isDarkMode, formFactor, disabled }) => (
   <YearPicker initialYear={parseInt(year || '', 10) || null} updatedValue={updatedValue} isDarkMode={isDarkMode} formFactor={formFactor} disabled={disabled} />
 );
 
 const getYearsInDecade = (startYear: number, count: number): number[] =>
   Array.from({ length: count }, (_, i) => startYear + i);
 
-interface YearPickerProps {
+interface IYearPickerProps {
   initialYear: number | null;
   updatedValue: (value: string) => void;
   isDarkMode: boolean;
@@ -31,7 +31,7 @@ interface YearPickerProps {
   disabled: boolean;  
 }
 
-const YearPicker: React.FC<YearPickerProps> = ({ initialYear, updatedValue, isDarkMode, formFactor, disabled }) => {
+const YearPicker: React.FC<IYearPickerProps> = ({ initialYear, updatedValue, isDarkMode, formFactor, disabled }) => {
   const currentYear = new Date().getFullYear();
 
   const [yearsInScreen, setYearsInScreen] = useState(formFactor <= 1 ? YEARS_LARGE_SCREEN : YEARS_SMALL_SCREEN);
@@ -148,4 +148,4 @@ const YearButton: React.FC<YearButtonProps> = ({ year, selectYear, selectedYear,
 );
 
 export default FluentYearPicker;
-export type { FluentYearPickerProps };
+export type { IFluentYearPickerProps };

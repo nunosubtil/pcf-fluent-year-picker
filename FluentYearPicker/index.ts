@@ -1,5 +1,5 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
-import FluentYearPicker, { FluentYearPickerProps } from "./FluentYearPicker"; 
+import FluentYearPicker, { IFluentYearPickerProps } from "./FluentYearPicker"; 
 import * as React from "react";
 
 export class PCFFluentYearPicker implements ComponentFramework.ReactControl<IInputs, IOutputs> {
@@ -31,7 +31,7 @@ export class PCFFluentYearPicker implements ComponentFramework.ReactControl<IInp
     public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
         this._updateContextValues(context);
 
-        const props: FluentYearPickerProps = { 
+        const props: IFluentYearPickerProps = { 
             year: this._value,
             updatedValue: this._updateValue.bind(this),
             isDarkMode: this._isDarkMode,
