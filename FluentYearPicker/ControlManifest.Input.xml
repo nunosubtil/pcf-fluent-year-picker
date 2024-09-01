@@ -3,7 +3,7 @@
   <control namespace="nunosubtil" constructor="PCFFluentYearPicker" version="0.0.1" display-name-key="PCFFluentYearPicker" description-key="PCFFluentYearPicker description" control-type="virtual" >
     <external-service-usage enabled="false">
     </external-service-usage>
-    <property name="yearInput" display-name-key="yearInput_Display_Key" description-key="yearInput_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="yearInput" display-name-key="Year Input" description-key="Specifies the column for entering a year value that this property is bound to. Input should be a string." of-type="SingleLine.Text" usage="bound" required="true" />
     <resources>
       <code path="index.ts" order="1"/>
       <platform-library name="React" version="16.8.6" />
